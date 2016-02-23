@@ -28,10 +28,11 @@ if(argv.a){
     .pipe(api.createAnimationProcessor(argv.f));
 } else {
   if(argv.t){
+    console.log("Caution: Canvas size is " + process.stdout.columns+":200. Do not paint outside")
     process.stdin
       .pipe(es.split())
       .pipe(es.mapSync(parse))
-      .pipe(tc(argv.f))
+      .pipe(tc())
       .pipe(process.stdout);
   }
   else {
