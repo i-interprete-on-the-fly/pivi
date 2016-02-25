@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/LittleHelicase/pivi.svg)](https://travis-ci.org/LittleHelicase/pivi)
 
 # Pivi
-Pivi (short for Pipeviewer) is a tool that simplifies visualization tasks. It has a simple stream based input format.
+Pivi (short for Pipeviewer) is a tool that simplifies visualization tasks. It has a simple stream based input format and can output its results into an image as well as directly to the terminal. 
 
 # Installation
 You need Cairo to create the images. We use [node-canvas](https://github.com/Automattic/node-canvas) to create the images they have an [installation guide](https://github.com/Automattic/node-canvas/wiki/_pages) on their project page.
@@ -24,7 +24,10 @@ The following program generates a zigzag line and outputs it as a PNG image.
 ```
 echo "polyline (0 0) (100 100) (100 0) (0 100)" | pivi
 ```
-
+The same line displayed in the terminal:
+```
+echo "polyline (0 0) (100 100) (100 0) (0 100)" | pivi -t
+```
 # Supported Commands
 All points can be written as a tupel or you can simply omit all commas or brackets.
 - `point 1 2`
@@ -48,7 +51,9 @@ You should install gulp (`npm install -g gulp`) to run all the tasks during deve
 all available tasks in `gulpfile.js` or via `gulp --tasks`.
 
 # Alternatives
-You can try ImageMagick's convert. You can pass arguments to it that function similar to our commands. More [here](http://www.imagemagick.org/Usage/draw)
+- You can try ImageMagick's convert. You can pass arguments to it that function similar to our commands. More
+[here](http://www.imagemagick.org/Usage/draw)
+- Terminal plotting is also possible with gnuplot. More [here](http://www.gnuplot.info/)
 
 # Contributors
 - Rasmus Buchmann
