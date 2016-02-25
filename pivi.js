@@ -28,7 +28,7 @@ if(argv.a){
     .pipe(api.createAnimationProcessor(argv.f));
 } else {
   if(argv.t){
-    console.log("Caution: Canvas size is " + process.stdout.columns+":200. Painting outside can result in strange behaviour. Use the canvas command to set appropriate size.")
+    console.log("Caution: Canvas size is " + process.stdout.columns*2+":"+process.stdout.rows*3.3 + ". Painting outside can result in strange behaviour. Use the canvas command to set appropriate size.")
     process.stdin
       .pipe(es.split())
       .pipe(es.mapSync(parse))
